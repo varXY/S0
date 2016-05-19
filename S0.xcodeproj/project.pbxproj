@@ -8,20 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		31401B9F1CED88DE00581303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401B9E1CED88DE00581303 /* AppDelegate.swift */; };
-		31401BA11CED88DE00581303 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BA01CED88DE00581303 /* ViewController.swift */; };
-		31401BA41CED88DE00581303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31401BA21CED88DE00581303 /* Main.storyboard */; };
+		31401BA11CED88DE00581303 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BA01CED88DE00581303 /* MainViewController.swift */; };
 		31401BA61CED88DE00581303 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31401BA51CED88DE00581303 /* Assets.xcassets */; };
 		31401BA91CED88DE00581303 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31401BA71CED88DE00581303 /* LaunchScreen.storyboard */; };
+		31401BB41CED8C0800581303 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BB31CED8C0800581303 /* Words.swift */; };
+		31401BB61CED981500581303 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BB51CED981500581303 /* DetailViewController.swift */; };
+		31401BBC1CED9C1B00581303 /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BB81CED9C1B00581303 /* DimmingPresentationController.swift */; };
+		31401BBD1CED9C1B00581303 /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BB91CED9C1B00581303 /* BounceAnimationController.swift */; };
+		31401BBE1CED9C1B00581303 /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BBA1CED9C1B00581303 /* FadeOutAnimationController.swift */; };
+		31401BBF1CED9C1B00581303 /* SildeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BBB1CED9C1B00581303 /* SildeOutAnimationController.swift */; };
+		31401BC11CED9C4400581303 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BC01CED9C4400581303 /* Global.swift */; };
+		31401BC41CED9E6900581303 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BC31CED9E6900581303 /* UIColor+.swift */; };
+		31401BC61CEDA87100581303 /* ColorfulWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BC51CEDA87100581303 /* ColorfulWords.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		31401B9B1CED88DD00581303 /* S0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = S0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31401B9E1CED88DE00581303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		31401BA01CED88DE00581303 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		31401BA31CED88DE00581303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		31401BA01CED88DE00581303 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		31401BA51CED88DE00581303 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31401BA81CED88DE00581303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31401BAA1CED88DE00581303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31401BB31CED8C0800581303 /* Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
+		31401BB51CED981500581303 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		31401BB81CED9C1B00581303 /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
+		31401BB91CED9C1B00581303 /* BounceAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
+		31401BBA1CED9C1B00581303 /* FadeOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeOutAnimationController.swift; sourceTree = "<group>"; };
+		31401BBB1CED9C1B00581303 /* SildeOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SildeOutAnimationController.swift; sourceTree = "<group>"; };
+		31401BC01CED9C4400581303 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		31401BC31CED9E6900581303 /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		31401BC51CEDA87100581303 /* ColorfulWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorfulWords.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +71,61 @@
 			isa = PBXGroup;
 			children = (
 				31401B9E1CED88DE00581303 /* AppDelegate.swift */,
-				31401BA01CED88DE00581303 /* ViewController.swift */,
-				31401BA21CED88DE00581303 /* Main.storyboard */,
+				31401BC01CED9C4400581303 /* Global.swift */,
+				31401BA01CED88DE00581303 /* MainViewController.swift */,
+				31401BB51CED981500581303 /* DetailViewController.swift */,
+				31401BB71CED9BFE00581303 /* Presentation */,
+				31401BB11CED8A7600581303 /* View */,
+				31401BB21CED8A8100581303 /* Model */,
+				31401BC21CED9E3E00581303 /* Extension */,
 				31401BA51CED88DE00581303 /* Assets.xcassets */,
-				31401BA71CED88DE00581303 /* LaunchScreen.storyboard */,
-				31401BAA1CED88DE00581303 /* Info.plist */,
+				31401BB01CED8A3000581303 /* Supporting File */,
 			);
 			path = S0;
+			sourceTree = "<group>";
+		};
+		31401BB01CED8A3000581303 /* Supporting File */ = {
+			isa = PBXGroup;
+			children = (
+				31401BAA1CED88DE00581303 /* Info.plist */,
+				31401BA71CED88DE00581303 /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting File";
+			sourceTree = "<group>";
+		};
+		31401BB11CED8A7600581303 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		31401BB21CED8A8100581303 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				31401BB31CED8C0800581303 /* Words.swift */,
+				31401BC51CEDA87100581303 /* ColorfulWords.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		31401BB71CED9BFE00581303 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				31401BB81CED9C1B00581303 /* DimmingPresentationController.swift */,
+				31401BB91CED9C1B00581303 /* BounceAnimationController.swift */,
+				31401BBA1CED9C1B00581303 /* FadeOutAnimationController.swift */,
+				31401BBB1CED9C1B00581303 /* SildeOutAnimationController.swift */,
+			);
+			name = Presentation;
+			sourceTree = "<group>";
+		};
+		31401BC21CED9E3E00581303 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				31401BC31CED9E6900581303 /* UIColor+.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +188,6 @@
 			files = (
 				31401BA91CED88DE00581303 /* LaunchScreen.storyboard in Resources */,
 				31401BA61CED88DE00581303 /* Assets.xcassets in Resources */,
-				31401BA41CED88DE00581303 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,22 +198,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31401BA11CED88DE00581303 /* ViewController.swift in Sources */,
+				31401BB41CED8C0800581303 /* Words.swift in Sources */,
+				31401BBC1CED9C1B00581303 /* DimmingPresentationController.swift in Sources */,
+				31401BC61CEDA87100581303 /* ColorfulWords.swift in Sources */,
+				31401BBE1CED9C1B00581303 /* FadeOutAnimationController.swift in Sources */,
+				31401BBF1CED9C1B00581303 /* SildeOutAnimationController.swift in Sources */,
+				31401BA11CED88DE00581303 /* MainViewController.swift in Sources */,
 				31401B9F1CED88DE00581303 /* AppDelegate.swift in Sources */,
+				31401BBD1CED9C1B00581303 /* BounceAnimationController.swift in Sources */,
+				31401BB61CED981500581303 /* DetailViewController.swift in Sources */,
+				31401BC11CED9C4400581303 /* Global.swift in Sources */,
+				31401BC41CED9E6900581303 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		31401BA21CED88DE00581303 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				31401BA31CED88DE00581303 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		31401BA71CED88DE00581303 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -250,6 +314,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = S0/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = myname.com.S0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -261,6 +326,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = S0/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = myname.com.S0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,6 +352,7 @@
 				31401BAF1CED88DE00581303 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
