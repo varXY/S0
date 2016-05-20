@@ -12,7 +12,7 @@ enum Catalog: Int {
 	case A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z
 
 	var title: String {
-		return String(self)
+		return "#" + String(self)
 	}
 
 	var words: [String] {
@@ -28,7 +28,7 @@ enum Catalog: Int {
 		case .E:
 			return ["enum", "extension"]
 		case .F:
-			return ["foundation", "frame", "false", "format", "formatter", "Foreground"]
+			return ["foundation", "frame", "false", "format", "formatter", "foreground"]
 		case .G:
 			return ["guard", "graphics"]
 		case .H:

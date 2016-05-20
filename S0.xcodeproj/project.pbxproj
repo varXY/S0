@@ -20,6 +20,12 @@
 		31401BC11CED9C4400581303 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BC01CED9C4400581303 /* Global.swift */; };
 		31401BC41CED9E6900581303 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BC31CED9E6900581303 /* UIColor+.swift */; };
 		31401BC61CEDA87100581303 /* ColorfulWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BC51CEDA87100581303 /* ColorfulWords.swift */; };
+		31C6CB7A1CEEDC3300A9DE2B /* Menlo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 31C6CB791CEEDC3300A9DE2B /* Menlo.ttc */; };
+		31C6CB7C1CEEDD4600A9DE2B /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6CB7B1CEEDD4600A9DE2B /* UIFont+.swift */; };
+		31C6CB7E1CEEE23200A9DE2B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6CB7D1CEEE23200A9DE2B /* NavigationController.swift */; };
+		31C6CB801CEEED5A00A9DE2B /* XYScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6CB7F1CEEED5A00A9DE2B /* XYScrollView.swift */; };
+		31C6CB821CEEED9000A9DE2B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6CB811CEEED9000A9DE2B /* DetailView.swift */; };
+		31C6CB841CEEFC3D00A9DE2B /* PointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6CB831CEEFC3D00A9DE2B /* PointerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,12 @@
 		31401BC01CED9C4400581303 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		31401BC31CED9E6900581303 /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		31401BC51CEDA87100581303 /* ColorfulWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorfulWords.swift; sourceTree = "<group>"; };
+		31C6CB791CEEDC3300A9DE2B /* Menlo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Menlo.ttc; sourceTree = "<group>"; };
+		31C6CB7B1CEEDD4600A9DE2B /* UIFont+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		31C6CB7D1CEEE23200A9DE2B /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		31C6CB7F1CEEED5A00A9DE2B /* XYScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYScrollView.swift; sourceTree = "<group>"; };
+		31C6CB811CEEED9000A9DE2B /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		31C6CB831CEEFC3D00A9DE2B /* PointerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,13 +84,14 @@
 			children = (
 				31401B9E1CED88DE00581303 /* AppDelegate.swift */,
 				31401BC01CED9C4400581303 /* Global.swift */,
+				31C6CB7D1CEEE23200A9DE2B /* NavigationController.swift */,
 				31401BA01CED88DE00581303 /* MainViewController.swift */,
 				31401BB51CED981500581303 /* DetailViewController.swift */,
 				31401BB71CED9BFE00581303 /* Presentation */,
 				31401BB11CED8A7600581303 /* View */,
 				31401BB21CED8A8100581303 /* Model */,
 				31401BC21CED9E3E00581303 /* Extension */,
-				31401BA51CED88DE00581303 /* Assets.xcassets */,
+				31C6CB771CEEDBFD00A9DE2B /* Resources */,
 				31401BB01CED8A3000581303 /* Supporting File */,
 			);
 			path = S0;
@@ -96,6 +109,9 @@
 		31401BB11CED8A7600581303 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				31C6CB7F1CEEED5A00A9DE2B /* XYScrollView.swift */,
+				31C6CB811CEEED9000A9DE2B /* DetailView.swift */,
+				31C6CB831CEEFC3D00A9DE2B /* PointerView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -124,8 +140,26 @@
 			isa = PBXGroup;
 			children = (
 				31401BC31CED9E6900581303 /* UIColor+.swift */,
+				31C6CB7B1CEEDD4600A9DE2B /* UIFont+.swift */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		31C6CB771CEEDBFD00A9DE2B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				31401BA51CED88DE00581303 /* Assets.xcassets */,
+				31C6CB781CEEDC2000A9DE2B /* Font */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		31C6CB781CEEDC2000A9DE2B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				31C6CB791CEEDC3300A9DE2B /* Menlo.ttc */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31401BA91CED88DE00581303 /* LaunchScreen.storyboard in Resources */,
+				31C6CB7A1CEEDC3300A9DE2B /* Menlo.ttc in Resources */,
 				31401BA61CED88DE00581303 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,16 +233,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31C6CB7C1CEEDD4600A9DE2B /* UIFont+.swift in Sources */,
+				31C6CB7E1CEEE23200A9DE2B /* NavigationController.swift in Sources */,
 				31401BB41CED8C0800581303 /* Words.swift in Sources */,
 				31401BBC1CED9C1B00581303 /* DimmingPresentationController.swift in Sources */,
 				31401BC61CEDA87100581303 /* ColorfulWords.swift in Sources */,
 				31401BBE1CED9C1B00581303 /* FadeOutAnimationController.swift in Sources */,
 				31401BBF1CED9C1B00581303 /* SildeOutAnimationController.swift in Sources */,
 				31401BA11CED88DE00581303 /* MainViewController.swift in Sources */,
+				31C6CB841CEEFC3D00A9DE2B /* PointerView.swift in Sources */,
 				31401B9F1CED88DE00581303 /* AppDelegate.swift in Sources */,
 				31401BBD1CED9C1B00581303 /* BounceAnimationController.swift in Sources */,
 				31401BB61CED981500581303 /* DetailViewController.swift in Sources */,
 				31401BC11CED9C4400581303 /* Global.swift in Sources */,
+				31C6CB801CEEED5A00A9DE2B /* XYScrollView.swift in Sources */,
+				31C6CB821CEEED9000A9DE2B /* DetailView.swift in Sources */,
 				31401BC41CED9E6900581303 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

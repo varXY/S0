@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		window?.backgroundColor = UIColor.blackColor()
 
 		let mainVC = MainViewController()
-		window?.rootViewController = UINavigationController(rootViewController: mainVC)
+		window?.rootViewController = NavigationController(rootViewController: mainVC)
 		window?.makeKeyAndVisible()
 		
 		return true

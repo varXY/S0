@@ -11,46 +11,56 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-	var textView: UITextView!
+	var pointerView: PointerView!
+	var xyScrollView: XYScrollView!
 
-	let titleAttributes = [
-		NSForegroundColorAttributeName: UIColor.stringRed(),
-		NSFontAttributeName: UIFont.boldSystemFontOfSize(20)
-	]
-
-	let definitionAttributes = [
-		NSForegroundColorAttributeName: UIColor.commentGreen(),
-		NSFontAttributeName: UIFont.boldSystemFontOfSize(18)
-	]
-
-	let exampleAttributes = [
-		NSForegroundColorAttributeName: UIColor.numberPurple(),
-		NSFontAttributeName: UIFont.boldSystemFontOfSize(18)
-	]
-
-	let commentAttributes = [
-		NSForegroundColorAttributeName: UIColor.commentGreen(),
-		NSFontAttributeName: UIFont.boldSystemFontOfSize(18)
-	]
-
-	let placeholder = NSMutableAttributedString(string: "", attributes: nil)
+	override func prefersStatusBarHidden() -> Bool {
+		return true
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = UIColor.backgroundBlack()
 
-		textView = UITextView(frame: view.bounds)
-		view.addSubview(textView)
+		pointerView = PointerView()
+		view = pointerView
 
-		let texts = ["range", "1. 范围，应用范围、部分\n2. 包括一定范围之间的各类事物", "let string = \"hello\".rangeOfString(\"he\")", "// Foundation/NSString"]
+		xyScrollView = XYScrollView()
+		xyScrollView.initTopDetailIndex = (1, 1)
+		xyScrollView.XYDelegate = self
+		view.addSubview(xyScrollView)
+	}
 
-		let allAttributes = [titleAttributes, definitionAttributes, exampleAttributes, commentAttributes]
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		navigationController?.setNavigationBarHidden(true, animated: false)
+	}
+}
 
-		let attributedTexts: [NSMutableAttributedString] = texts.map({
-			let attributesText = NSMutableAttributedString(string: $0, attributes: allAttributes[texts.indexOf($0)!])
-			return attributesText
-		})
+extension DetailViewController: XYScrollViewDelegate {
 
+	func xyScrollViewDidBeginScroll(begin: Bool, type: XYScrollType) {
+		pointerView.makeOneVisible(begin, type: type)
+	}
 
+	func scrollTypeDidChange(type: XYScrollType) {
+		pointerView.showPointer(type)
+	}
+
+	func xyScrollViewWillScroll(scrollType: XYScrollType, topViewIndex: Int) {
+		if scrollType != .NotScrollYet {
+			pointerView.pointers[scrollType.rawValue].alpha = 0.0
+			pointerView.UDLR_labels[scrollType.rawValue].alpha = 0.0
+		}
+	}
+
+	func xyScrollViewDidScroll(scrollType: XYScrollType, topViewIndex: Int) {
+		switch scrollType {
+		case .Left:
+			navigationController?.popViewControllerAnimated(true)
+		case .Right:
+			break
+		default:
+			break
+		}
 	}
 }

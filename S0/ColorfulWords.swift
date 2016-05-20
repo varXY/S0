@@ -10,6 +10,8 @@ import Foundation
 
 
 struct ColorfulWords {
-	static let wordsInBuildInBlue = ["rangeOfString"
+	static let inKeywordPurple = ["var", "let", "func", "import", "class", "struct", "enum", "static", "public", "private", "lazy", "where"]
+	
+	static let inBuildInBlue = ["rangeOfString"
 	]
 }
