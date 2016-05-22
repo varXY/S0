@@ -46,6 +46,7 @@
 		318788AB1CF14631007CDC40 /* Enum_X.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788AA1CF14631007CDC40 /* Enum_X.swift */; };
 		318788AD1CF14644007CDC40 /* Enum_Y.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788AC1CF14644007CDC40 /* Enum_Y.swift */; };
 		318788AF1CF14653007CDC40 /* Enum_Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788AE1CF14653007CDC40 /* Enum_Z.swift */; };
+		318788B11CF176B7007CDC40 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788B01CF176B7007CDC40 /* String+.swift */; };
 		31C6CB7A1CEEDC3300A9DE2B /* Menlo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 31C6CB791CEEDC3300A9DE2B /* Menlo.ttc */; };
 		31C6CB7C1CEEDD4600A9DE2B /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6CB7B1CEEDD4600A9DE2B /* UIFont+.swift */; };
 		31C6CB7E1CEEE23200A9DE2B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6CB7D1CEEE23200A9DE2B /* NavigationController.swift */; };
@@ -96,6 +97,7 @@
 		318788AA1CF14631007CDC40 /* Enum_X.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_X.swift; sourceTree = "<group>"; };
 		318788AC1CF14644007CDC40 /* Enum_Y.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_Y.swift; sourceTree = "<group>"; };
 		318788AE1CF14653007CDC40 /* Enum_Z.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_Z.swift; sourceTree = "<group>"; };
+		318788B01CF176B7007CDC40 /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		31C6CB791CEEDC3300A9DE2B /* Menlo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Menlo.ttc; sourceTree = "<group>"; };
 		31C6CB7B1CEEDD4600A9DE2B /* UIFont+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		31C6CB7D1CEEE23200A9DE2B /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				31401BC31CED9E6900581303 /* UIColor+.swift */,
+				318788B01CF176B7007CDC40 /* String+.swift */,
 				31C6CB7B1CEEDD4600A9DE2B /* UIFont+.swift */,
 			);
 			name = Extension;
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31C6CB7C1CEEDD4600A9DE2B /* UIFont+.swift in Sources */,
+				318788B11CF176B7007CDC40 /* String+.swift in Sources */,
 				31C6CB7E1CEEE23200A9DE2B /* NavigationController.swift in Sources */,
 				31401BB41CED8C0800581303 /* Words.swift in Sources */,
 				318788AB1CF14631007CDC40 /* Enum_X.swift in Sources */,

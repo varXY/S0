@@ -14,6 +14,10 @@ class DetailView: UIView {
 	var meaningLabel: UILabel!
 	var exampleLabel: UILabel!
 
+	private let keywordAttributes = [NSForegroundColorAttributeName: UIColor.keywordPurple()]
+	private let buildInAttributes = [NSForegroundColorAttributeName: UIColor.buildInBlue()]
+	private let numberAttributes = [NSForegroundColorAttributeName: UIColor.numberPurple()]
+
 	init(detail: [String]) {
 		super.init(frame: ScreenBounds)
 		backgroundColor = UIColor.backgroundBlack()
@@ -52,7 +56,7 @@ class DetailView: UIView {
 		exampleCommentLabel.textColor = UIColor.commentGreen()
 		addSubview(exampleCommentLabel)
 
-		exampleLabel = UILabel(frame: CGRectMake(30, exampleCommentLabel.frame.origin.y + exampleCommentLabel.frame.height, ScreenWidth - 40, 80))
+		exampleLabel = UILabel(frame: CGRectMake(30, exampleCommentLabel.frame.origin.y + exampleCommentLabel.frame.height + 10, ScreenWidth - 40, 80))
 		exampleLabel.numberOfLines = 0
 		exampleLabel.textColor = UIColor.plainWhite()
 		exampleLabel.attributedText = stringToAttributedString(detail[2])
@@ -62,8 +66,71 @@ class DetailView: UIView {
 	}
 
 	func stringToAttributedString(string: String) -> NSMutableAttributedString {
+		let words = totalSepratedWords(string)
+		let wordsIn_keywordPurple = filterKeywords(words)
+		let wordsIn_buildInBlue = filterBuildInWords(words)
+
+		print(wordsIn_keywordPurple)
+		print(wordsIn_buildInBlue)
+
 		let result = NSMutableAttributedString(string: string)
+
+		wordsIn_keywordPurple.forEach({
+			let range = result.mutableString.rangeOfString($0, options: .RegularExpressionSearch)
+			result.addAttributes(keywordAttributes, range: range)
+		})
+
+		wordsIn_buildInBlue.forEach({
+			var searchRange = NSMakeRange(0, result.mutableString.length)
+			var foundRange = NSRange()
+
+			repeat {
+				searchRange.length = result.mutableString.length - searchRange.location
+				foundRange = result.mutableString.rangeOfString($0, options: [], range: searchRange)
+				if foundRange.location != NSNotFound {
+					result.addAttributes(buildInAttributes, range: foundRange)
+					searchRange.location = foundRange.location + foundRange.length
+				} else {
+					break
+				}
+			} while searchRange.location < result.mutableString.length
+		})
+
 		return result
+	}
+
+	func totalSepratedWords(string: String) -> [String] {
+		let sentences = string.componentsSeparatedByString("\n\n")
+		var words_a = [String]()
+		sentences.forEach({
+			let a = $0.componentsSeparatedByString(" ")
+			words_a += a
+		})
+
+		return words_a
+	}
+
+	func filterKeywords(words: [String]) -> [String] {
+		var keywords = [String]()
+		words.forEach({ if Keywords.contains($0) { keywords.append($0) } })
+		return keywords
+	}
+
+	func filterBuildInWords(words: [String]) -> [String] {
+		var buildInWords = [String]()
+
+		words.forEach({
+			let dotWords = $0.componentsSeparatedByString(".")
+			if dotWords.count > 1 {
+				buildInWords += dotWords
+			} else {
+				let word = $0.removeMarks_1()
+				if word.isUppercaseWord() { buildInWords.append(word) }
+			}
+		})
+
+		buildInWords = buildInWords.map({ return $0.removeMarks_1() })
+		return buildInWords
 	}
 	
 	required init?(coder aDecoder: NSCoder) {

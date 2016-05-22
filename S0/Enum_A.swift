@@ -16,8 +16,8 @@ enum C_A: String {
 		case .application:
 			return [
 				"application",
-				"1. 应用程序\n2. 应用，运用，使用、用于\n3. 申请，请求",
-				"func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool\n\nlet notificationEnable = UIApplication.sharedApplication().currentUserNotificationSettings()!.types != UIUserNotificationType.None"
+				"1. 应用程序\n2. 应用，运用，使用，用于\n3. 申请，请求",
+				"func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool\n\nlet notificationEnabled = UIApplication.sharedApplication().currentUserNotificationSettings()!.types != UIUserNotificationType.None"
 			]
 		default:
 			return ["", "", ""]
