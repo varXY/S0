@@ -20,6 +20,32 @@
 		31401BC11CED9C4400581303 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BC01CED9C4400581303 /* Global.swift */; };
 		31401BC41CED9E6900581303 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BC31CED9E6900581303 /* UIColor+.swift */; };
 		31401BC61CEDA87100581303 /* ColorfulWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31401BC51CEDA87100581303 /* ColorfulWords.swift */; };
+		3187887D1CF14184007CDC40 /* Enum_A.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187887C1CF14184007CDC40 /* Enum_A.swift */; };
+		3187887F1CF14503007CDC40 /* Enum_B.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187887E1CF14503007CDC40 /* Enum_B.swift */; };
+		318788811CF14526007CDC40 /* Enum_C.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788801CF14526007CDC40 /* Enum_C.swift */; };
+		318788831CF14545007CDC40 /* Enum_D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788821CF14545007CDC40 /* Enum_D.swift */; };
+		318788851CF14551007CDC40 /* Enum_E.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788841CF14551007CDC40 /* Enum_E.swift */; };
+		318788871CF1455D007CDC40 /* Enum_F.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788861CF1455D007CDC40 /* Enum_F.swift */; };
+		318788891CF14567007CDC40 /* Enum_G.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788881CF14567007CDC40 /* Enum_G.swift */; };
+		3187888B1CF14571007CDC40 /* Enum_H.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187888A1CF14571007CDC40 /* Enum_H.swift */; };
+		3187888D1CF1457D007CDC40 /* Enum_I.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187888C1CF1457D007CDC40 /* Enum_I.swift */; };
+		3187888F1CF14588007CDC40 /* Enum_J.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187888E1CF14588007CDC40 /* Enum_J.swift */; };
+		318788911CF14592007CDC40 /* Enum_K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788901CF14592007CDC40 /* Enum_K.swift */; };
+		318788931CF1459D007CDC40 /* Enum_L.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788921CF1459D007CDC40 /* Enum_L.swift */; };
+		318788951CF145A8007CDC40 /* Enum_M.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788941CF145A8007CDC40 /* Enum_M.swift */; };
+		318788971CF145B2007CDC40 /* Enum_N.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788961CF145B2007CDC40 /* Enum_N.swift */; };
+		318788991CF145BB007CDC40 /* Enum_O.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788981CF145BB007CDC40 /* Enum_O.swift */; };
+		3187889B1CF145C5007CDC40 /* Enum_P.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187889A1CF145C5007CDC40 /* Enum_P.swift */; };
+		3187889D1CF145CE007CDC40 /* Enum_Q.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187889C1CF145CE007CDC40 /* Enum_Q.swift */; };
+		3187889F1CF145D8007CDC40 /* Enum_R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187889E1CF145D8007CDC40 /* Enum_R.swift */; };
+		318788A11CF145DE007CDC40 /* Enum_S.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788A01CF145DE007CDC40 /* Enum_S.swift */; };
+		318788A31CF145F3007CDC40 /* Enum_T.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788A21CF145F3007CDC40 /* Enum_T.swift */; };
+		318788A51CF14603007CDC40 /* Enum_U.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788A41CF14603007CDC40 /* Enum_U.swift */; };
+		318788A71CF1460B007CDC40 /* Enum_V.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788A61CF1460B007CDC40 /* Enum_V.swift */; };
+		318788A91CF14613007CDC40 /* Enum_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788A81CF14613007CDC40 /* Enum_W.swift */; };
+		318788AB1CF14631007CDC40 /* Enum_X.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788AA1CF14631007CDC40 /* Enum_X.swift */; };
+		318788AD1CF14644007CDC40 /* Enum_Y.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788AC1CF14644007CDC40 /* Enum_Y.swift */; };
+		318788AF1CF14653007CDC40 /* Enum_Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318788AE1CF14653007CDC40 /* Enum_Z.swift */; };
 		31C6CB7A1CEEDC3300A9DE2B /* Menlo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 31C6CB791CEEDC3300A9DE2B /* Menlo.ttc */; };
 		31C6CB7C1CEEDD4600A9DE2B /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6CB7B1CEEDD4600A9DE2B /* UIFont+.swift */; };
 		31C6CB7E1CEEE23200A9DE2B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6CB7D1CEEE23200A9DE2B /* NavigationController.swift */; };
@@ -44,6 +70,32 @@
 		31401BC01CED9C4400581303 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		31401BC31CED9E6900581303 /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		31401BC51CEDA87100581303 /* ColorfulWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorfulWords.swift; sourceTree = "<group>"; };
+		3187887C1CF14184007CDC40 /* Enum_A.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_A.swift; sourceTree = "<group>"; };
+		3187887E1CF14503007CDC40 /* Enum_B.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_B.swift; sourceTree = "<group>"; };
+		318788801CF14526007CDC40 /* Enum_C.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_C.swift; sourceTree = "<group>"; };
+		318788821CF14545007CDC40 /* Enum_D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_D.swift; sourceTree = "<group>"; };
+		318788841CF14551007CDC40 /* Enum_E.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_E.swift; sourceTree = "<group>"; };
+		318788861CF1455D007CDC40 /* Enum_F.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_F.swift; sourceTree = "<group>"; };
+		318788881CF14567007CDC40 /* Enum_G.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_G.swift; sourceTree = "<group>"; };
+		3187888A1CF14571007CDC40 /* Enum_H.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_H.swift; sourceTree = "<group>"; };
+		3187888C1CF1457D007CDC40 /* Enum_I.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_I.swift; sourceTree = "<group>"; };
+		3187888E1CF14588007CDC40 /* Enum_J.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_J.swift; sourceTree = "<group>"; };
+		318788901CF14592007CDC40 /* Enum_K.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_K.swift; sourceTree = "<group>"; };
+		318788921CF1459D007CDC40 /* Enum_L.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_L.swift; sourceTree = "<group>"; };
+		318788941CF145A8007CDC40 /* Enum_M.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_M.swift; sourceTree = "<group>"; };
+		318788961CF145B2007CDC40 /* Enum_N.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_N.swift; sourceTree = "<group>"; };
+		318788981CF145BB007CDC40 /* Enum_O.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_O.swift; sourceTree = "<group>"; };
+		3187889A1CF145C5007CDC40 /* Enum_P.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_P.swift; sourceTree = "<group>"; };
+		3187889C1CF145CE007CDC40 /* Enum_Q.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_Q.swift; sourceTree = "<group>"; };
+		3187889E1CF145D8007CDC40 /* Enum_R.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_R.swift; sourceTree = "<group>"; };
+		318788A01CF145DE007CDC40 /* Enum_S.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_S.swift; sourceTree = "<group>"; };
+		318788A21CF145F3007CDC40 /* Enum_T.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_T.swift; sourceTree = "<group>"; };
+		318788A41CF14603007CDC40 /* Enum_U.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_U.swift; sourceTree = "<group>"; };
+		318788A61CF1460B007CDC40 /* Enum_V.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_V.swift; sourceTree = "<group>"; };
+		318788A81CF14613007CDC40 /* Enum_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_W.swift; sourceTree = "<group>"; };
+		318788AA1CF14631007CDC40 /* Enum_X.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_X.swift; sourceTree = "<group>"; };
+		318788AC1CF14644007CDC40 /* Enum_Y.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_Y.swift; sourceTree = "<group>"; };
+		318788AE1CF14653007CDC40 /* Enum_Z.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum_Z.swift; sourceTree = "<group>"; };
 		31C6CB791CEEDC3300A9DE2B /* Menlo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Menlo.ttc; sourceTree = "<group>"; };
 		31C6CB7B1CEEDD4600A9DE2B /* UIFont+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		31C6CB7D1CEEE23200A9DE2B /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -121,6 +173,7 @@
 			children = (
 				31401BB31CED8C0800581303 /* Words.swift */,
 				31401BC51CEDA87100581303 /* ColorfulWords.swift */,
+				3187887B1CF1412F007CDC40 /* 26enum */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -143,6 +196,39 @@
 				31C6CB7B1CEEDD4600A9DE2B /* UIFont+.swift */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		3187887B1CF1412F007CDC40 /* 26enum */ = {
+			isa = PBXGroup;
+			children = (
+				3187887C1CF14184007CDC40 /* Enum_A.swift */,
+				3187887E1CF14503007CDC40 /* Enum_B.swift */,
+				318788801CF14526007CDC40 /* Enum_C.swift */,
+				318788821CF14545007CDC40 /* Enum_D.swift */,
+				318788841CF14551007CDC40 /* Enum_E.swift */,
+				318788861CF1455D007CDC40 /* Enum_F.swift */,
+				318788881CF14567007CDC40 /* Enum_G.swift */,
+				3187888A1CF14571007CDC40 /* Enum_H.swift */,
+				3187888C1CF1457D007CDC40 /* Enum_I.swift */,
+				3187888E1CF14588007CDC40 /* Enum_J.swift */,
+				318788901CF14592007CDC40 /* Enum_K.swift */,
+				318788921CF1459D007CDC40 /* Enum_L.swift */,
+				318788941CF145A8007CDC40 /* Enum_M.swift */,
+				318788961CF145B2007CDC40 /* Enum_N.swift */,
+				318788981CF145BB007CDC40 /* Enum_O.swift */,
+				3187889A1CF145C5007CDC40 /* Enum_P.swift */,
+				3187889C1CF145CE007CDC40 /* Enum_Q.swift */,
+				3187889E1CF145D8007CDC40 /* Enum_R.swift */,
+				318788A01CF145DE007CDC40 /* Enum_S.swift */,
+				318788A21CF145F3007CDC40 /* Enum_T.swift */,
+				318788A41CF14603007CDC40 /* Enum_U.swift */,
+				318788A61CF1460B007CDC40 /* Enum_V.swift */,
+				318788A81CF14613007CDC40 /* Enum_W.swift */,
+				318788AA1CF14631007CDC40 /* Enum_X.swift */,
+				318788AC1CF14644007CDC40 /* Enum_Y.swift */,
+				318788AE1CF14653007CDC40 /* Enum_Z.swift */,
+			);
+			name = 26enum;
 			sourceTree = "<group>";
 		};
 		31C6CB771CEEDBFD00A9DE2B /* Resources */ = {
@@ -236,19 +322,45 @@
 				31C6CB7C1CEEDD4600A9DE2B /* UIFont+.swift in Sources */,
 				31C6CB7E1CEEE23200A9DE2B /* NavigationController.swift in Sources */,
 				31401BB41CED8C0800581303 /* Words.swift in Sources */,
+				318788AB1CF14631007CDC40 /* Enum_X.swift in Sources */,
+				318788831CF14545007CDC40 /* Enum_D.swift in Sources */,
+				318788AF1CF14653007CDC40 /* Enum_Z.swift in Sources */,
 				31401BBC1CED9C1B00581303 /* DimmingPresentationController.swift in Sources */,
+				318788851CF14551007CDC40 /* Enum_E.swift in Sources */,
 				31401BC61CEDA87100581303 /* ColorfulWords.swift in Sources */,
+				3187887D1CF14184007CDC40 /* Enum_A.swift in Sources */,
 				31401BBE1CED9C1B00581303 /* FadeOutAnimationController.swift in Sources */,
+				318788871CF1455D007CDC40 /* Enum_F.swift in Sources */,
 				31401BBF1CED9C1B00581303 /* SildeOutAnimationController.swift in Sources */,
+				318788A91CF14613007CDC40 /* Enum_W.swift in Sources */,
+				3187889B1CF145C5007CDC40 /* Enum_P.swift in Sources */,
+				3187888F1CF14588007CDC40 /* Enum_J.swift in Sources */,
+				3187888B1CF14571007CDC40 /* Enum_H.swift in Sources */,
 				31401BA11CED88DE00581303 /* MainViewController.swift in Sources */,
+				318788891CF14567007CDC40 /* Enum_G.swift in Sources */,
+				318788811CF14526007CDC40 /* Enum_C.swift in Sources */,
 				31C6CB841CEEFC3D00A9DE2B /* PointerView.swift in Sources */,
 				31401B9F1CED88DE00581303 /* AppDelegate.swift in Sources */,
+				318788A71CF1460B007CDC40 /* Enum_V.swift in Sources */,
 				31401BBD1CED9C1B00581303 /* BounceAnimationController.swift in Sources */,
+				3187889D1CF145CE007CDC40 /* Enum_Q.swift in Sources */,
+				3187889F1CF145D8007CDC40 /* Enum_R.swift in Sources */,
+				318788931CF1459D007CDC40 /* Enum_L.swift in Sources */,
 				31401BB61CED981500581303 /* DetailViewController.swift in Sources */,
+				318788AD1CF14644007CDC40 /* Enum_Y.swift in Sources */,
 				31401BC11CED9C4400581303 /* Global.swift in Sources */,
 				31C6CB801CEEED5A00A9DE2B /* XYScrollView.swift in Sources */,
+				318788971CF145B2007CDC40 /* Enum_N.swift in Sources */,
 				31C6CB821CEEED9000A9DE2B /* DetailView.swift in Sources */,
 				31401BC41CED9E6900581303 /* UIColor+.swift in Sources */,
+				3187888D1CF1457D007CDC40 /* Enum_I.swift in Sources */,
+				318788A11CF145DE007CDC40 /* Enum_S.swift in Sources */,
+				3187887F1CF14503007CDC40 /* Enum_B.swift in Sources */,
+				318788A51CF14603007CDC40 /* Enum_U.swift in Sources */,
+				318788951CF145A8007CDC40 /* Enum_M.swift in Sources */,
+				318788911CF14592007CDC40 /* Enum_K.swift in Sources */,
+				318788991CF145BB007CDC40 /* Enum_O.swift in Sources */,
+				318788A31CF145F3007CDC40 /* Enum_T.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

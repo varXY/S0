@@ -42,26 +42,30 @@ class XYScrollView: UIScrollView {
 
 	var initTopDetailIndex: (Int, Int)! {
 		didSet {
+			let topDetail = Catalog(rawValue: initTopDetailIndex.0)!.detail(initTopDetailIndex.1)
+
 			if initTopDetailIndex != (0, 0) {
-				let storyView_0 = DetailView(detail: [[String]]())
+				let index = (initTopDetailIndex.0, initTopDetailIndex.1 - 1)
+				let storyView_0 = DetailView(detail: Catalog(rawValue: index.0)!.detail(index.1))
 				storyView_0.tag = 110
 				X0_contentView.addSubview(storyView_0)
 			} else {
-				let storyView_0 = DetailView(detail: [[String]]())
+				let storyView_0 = DetailView(detail: topDetail)
 				storyView_0.tag = 110
 				X0_contentView.addSubview(storyView_0)
 			}
 
-			let storyView_1 = DetailView(detail: [[String]]())
+			let storyView_1 = DetailView(detail: topDetail)
 			storyView_1.tag = 110
 			X1_contentView.addSubview(storyView_1)
 
 			if initTopDetailIndex != (25, 100) {
-				let storyView_2 = DetailView(detail: [[String]]())
+				let index = (initTopDetailIndex.0, initTopDetailIndex.1 + 1)
+				let storyView_2 = DetailView(detail: Catalog(rawValue: index.0)!.detail(index.1))
 				storyView_2.tag = 110
 				X2_contentView.addSubview(storyView_2)
 			} else {
-				let storyView_2 = DetailView(detail: [[String]]())
+				let storyView_2 = DetailView(detail: topDetail)
 				storyView_2.tag = 110
 				X2_contentView.addSubview(storyView_2)
 			}

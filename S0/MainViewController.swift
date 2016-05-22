@@ -96,8 +96,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		let detailVC = DetailViewController()
-//		detailVC.modalPresentationStyle = .Custom
-//		detailVC.transitioningDelegate = detailVC
+		detailVC.initTopDetailIndex = (indexPath.section, indexPath.row)
 		navigationController?.pushViewController(detailVC, animated: true)
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 	}

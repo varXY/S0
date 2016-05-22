@@ -14,6 +14,8 @@ class DetailViewController: UIViewController {
 	var pointerView: PointerView!
 	var xyScrollView: XYScrollView!
 
+	var initTopDetailIndex: (Int, Int)!
+
 	override func prefersStatusBarHidden() -> Bool {
 		return true
 	}
@@ -27,6 +29,7 @@ class DetailViewController: UIViewController {
 		xyScrollView = XYScrollView()
 		xyScrollView.initTopDetailIndex = (1, 1)
 		xyScrollView.XYDelegate = self
+		xyScrollView.initTopDetailIndex = initTopDetailIndex
 		view.addSubview(xyScrollView)
 	}
 

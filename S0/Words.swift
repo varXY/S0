@@ -8,11 +8,13 @@
 
 import Foundation
 
+let Keywords = ["var", "let", "func", "import", "class", "struct", "enum", "static", "public", "private", "lazy", "where", "false", "true", "nil", "guard", "case", "return"]
+
 enum Catalog: Int {
 	case A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z
 
 	var title: String {
-		return "#" + String(self)
+		return "# " + String(self)
 	}
 
 	var words: [String] {
@@ -36,9 +38,9 @@ enum Catalog: Int {
 		case .I:
 			return ["identifier", "item", "icon", "instance", "import"]
 		case .J:
-			return [""]
+			return ["JSON"]
 		case .K:
-			return ["kit", "key", "", "", "", "", "", ""]
+			return ["kit", "key"]
 		case .L:
 			return ["launch", "localize"]
 		case .M:
@@ -64,11 +66,18 @@ enum Catalog: Int {
 		case .W:
 			return ["where"]
 		case .X:
-			return [""]
+			return ["x"]
 		case .Y:
-			return [""]
+			return ["y"]
 		case .Z:
-			return [""]
+			return ["z"]
+		}
+	}
+
+	func detail(wordIndex: Int) -> [String] {
+		switch self {
+		case .A: return C_A(rawValue: self.words[wordIndex])!.detail
+		default: return ["", "", ""]
 		}
 	}
 }
