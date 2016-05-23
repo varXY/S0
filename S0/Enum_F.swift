@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum F: String {
+enum E_F: String {
 	case foundation, frame, false_S, format, formatter, foreground
 
 	var detail: [String] {

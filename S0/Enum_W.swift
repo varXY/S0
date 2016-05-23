@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum W: String {
+enum E_W: String {
 	case where_S
 
 	var detail: [String] {

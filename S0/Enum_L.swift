@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum L: String {
+enum E_L: String {
 	case launch, localize
 
 	var detail: [String] {

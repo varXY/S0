@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Q: String {
+enum E_Q: String {
 	case quit
 
 	var detail: [String] {

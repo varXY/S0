@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum K: String {
+enum E_K: String {
 	case kit, key
 
 	var detail: [String] {

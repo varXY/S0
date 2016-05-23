@@ -8,14 +8,15 @@
 
 import Foundation
 
-enum D: String {
+enum E_D: String {
 	case delegate, dispatch, delay, double, draw
 
 	var detail: [String] {
 		switch self {
 		case .delegate:
 			return [
-
+				"nihao",
+				""
 			]
 		default:
 			return ["", "", ""]

@@ -8,7 +8,7 @@
 
 import Foundation
 
-let Keywords = ["var", "let", "func", "import", "class", "struct", "enum", "static", "public", "private", "lazy", "where", "false", "true", "nil", "guard", "case", "return"]
+let Keywords = ["var ", "let ", "func ", "import ", "class ", "struct ", "enum ", "static ", "public ", "private ", "lazy ", "where ", "false ", "true ", "nil ", "guard ", "case ", "return ", "try ", "try! ", "#function", "#selector", "override ", "typealias ", "extension "]
 
 enum Catalog: Int {
 	case A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z
@@ -20,11 +20,17 @@ enum Catalog: Int {
 	var words: [String] {
 		switch self {
 		case .A:
-			return ["application", "additional", "animate", "ambient", "active", "action", "attribute"]
+			return [
+				"application", "additional", "animate", "ambient", "active", "action", "attribute"
+			]
 		case .B:
-			return ["bundle", "bool", "bounds", "background", "behavior", "CG"]
+			return [
+				"bundle", "bool", "bounds", "background", "behavior"
+			]
 		case .C:
-			return ["component", "category", "cell", "completion", "context","controller"]
+			return [
+				"component", "category", "cell", "completion", "context","controller", "CG"
+			]
 		case .D:
 			return ["delegate", "dispatch", "delay", "double", "draw"]
 		case .E:
@@ -75,9 +81,36 @@ enum Catalog: Int {
 	}
 
 	func detail(wordIndex: Int) -> [String] {
+		let word = words[wordIndex]
+		let word_S = Keywords.contains(word + " ") ? word + "_S" : word
+
 		switch self {
-		case .A: return C_A(rawValue: self.words[wordIndex])!.detail
-		default: return ["", "", ""]
+		case .A: return [word] + E_A(rawValue: word_S)!.detail
+		case .B: return [word] + E_B(rawValue: word_S)!.detail
+		case .C: return [word] + E_C(rawValue: word_S)!.detail
+		case .D: return [word] + E_D(rawValue: word_S)!.detail
+		case .E: return [word] + E_E(rawValue: word_S)!.detail
+		case .F: return [word] + E_F(rawValue: word_S)!.detail
+		case .G: return [word] + E_G(rawValue: word_S)!.detail
+		case .H: return [word] + E_H(rawValue: word_S)!.detail
+		case .I: return [word] + E_I(rawValue: word_S)!.detail
+		case .J: return [word] + E_J(rawValue: word_S)!.detail
+		case .K: return [word] + E_K(rawValue: word_S)!.detail
+		case .L: return [word] + E_L(rawValue: word_S)!.detail
+		case .M: return [word] + E_M(rawValue: word_S)!.detail
+		case .N: return [word] + E_N(rawValue: word_S)!.detail
+		case .O: return [word] + E_O(rawValue: word_S)!.detail
+		case .P: return [word] + E_P(rawValue: word_S)!.detail
+		case .Q: return [word] + E_Q(rawValue: word_S)!.detail
+		case .R: return [word] + E_R(rawValue: word_S)!.detail
+		case .S: return [word] + E_S(rawValue: word_S)!.detail
+		case .T: return [word] + E_T(rawValue: word_S)!.detail
+		case .U: return [word] + E_U(rawValue: word_S)!.detail
+		case .V: return [word] + E_V(rawValue: word_S)!.detail
+		case .W: return [word] + E_W(rawValue: word_S)!.detail
+		case .X: return [word] + E_X(rawValue: word_S)!.detail
+		case .Y: return [word] + E_Y(rawValue: word_S)!.detail
+		case .Z: return [word] + E_Z(rawValue: word_S)!.detail
 		}
 	}
 }

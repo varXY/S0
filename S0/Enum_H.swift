@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum H: String {
+enum E_H: String {
 	case hide, hierarchy
 
 	var detail: [String] {

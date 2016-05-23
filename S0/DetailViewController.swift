@@ -26,10 +26,8 @@ class DetailViewController: UIViewController {
 		pointerView = PointerView()
 		view = pointerView
 
-		xyScrollView = XYScrollView()
-		xyScrollView.initTopDetailIndex = (1, 1)
+		xyScrollView = XYScrollView(topDetailIndex: initTopDetailIndex)
 		xyScrollView.XYDelegate = self
-		xyScrollView.initTopDetailIndex = initTopDetailIndex
 		view.addSubview(xyScrollView)
 	}
 

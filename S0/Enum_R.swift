@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum R: String {
+enum E_R: String {
 	case responder, rawValue, return_S, rect
 
 	var detail: [String] {

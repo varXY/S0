@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum T: String {
+enum E_T: String {
 	case title, terminate, template, tableView, tintColor, translucent
 
 	var detail: [String] {

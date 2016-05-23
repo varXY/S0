@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum U: String {
+enum E_U: String {
 	case userInfo, UI
 
 	var detail: [String] {

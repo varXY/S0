@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum V: String {
+enum E_V: String {
 	case viewController
 
 	var detail: [String] {

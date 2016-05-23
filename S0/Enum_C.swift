@@ -8,14 +8,15 @@
 
 import Foundation
 
-enum C: String {
-	case component, category, cell, completion, context,controller
+enum E_C: String {
+	case component, category, cell, completion, context, controller, CG
 
 	var detail: [String] {
 		switch self {
 		case .component:
 			return [
-				"nihao"
+				"nihao",
+				""
 			]
 		default:
 			return ["", "", ""]

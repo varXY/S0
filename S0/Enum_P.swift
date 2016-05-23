@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum P: String {
+enum E_P: String {
 	case perform, play, prefer
 
 	var detail: [String] {

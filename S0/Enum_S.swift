@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum S: String {
+enum E_S: String {
 	case shortcut, string, subtitle, set, session, separate, statusBar, second
 
 	var detail: [String] {

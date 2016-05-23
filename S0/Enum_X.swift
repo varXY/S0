@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum X: String {
+enum E_X: String {
 	case x
 
 	var detail: [String] {

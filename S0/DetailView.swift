@@ -24,6 +24,16 @@ class DetailView: UIView {
 		layer.cornerRadius = globalRadius
 		clipsToBounds = true
 
+		setupLabels(detail)
+	}
+
+	func reloadDetail(detail: [String]) {
+		print(detail)
+		subviews.forEach({ $0.removeFromSuperview() })
+		setupLabels(detail)
+	}
+
+	func setupLabels(detail: [String]) {
 		titleLabel = UILabel(frame: CGRectMake(10, 0, ScreenWidth - 20, 60))
 		titleLabel.text = detail[0]
 		titleLabel.font = UIFont.defaultFont(20)
@@ -56,22 +66,27 @@ class DetailView: UIView {
 		exampleCommentLabel.textColor = UIColor.commentGreen()
 		addSubview(exampleCommentLabel)
 
-		exampleLabel = UILabel(frame: CGRectMake(30, exampleCommentLabel.frame.origin.y + exampleCommentLabel.frame.height + 10, ScreenWidth - 40, 80))
+
+		let y = exampleCommentLabel.frame.origin.y + exampleCommentLabel.frame.height + 10
+
+		exampleLabel = UILabel(frame: CGRectMake(0, 0, ScreenWidth * 10, ScreenHeight - y - 30))
 		exampleLabel.numberOfLines = 0
 		exampleLabel.textColor = UIColor.plainWhite()
 		exampleLabel.attributedText = stringToAttributedString(detail[2])
 		exampleLabel.font = UIFont.defaultFont(17)
 		exampleLabel.sizeToFit()
-		addSubview(exampleLabel)
+
+		let scrollView = UIScrollView(frame: CGRectMake(10, y, ScreenWidth - 10, exampleLabel.frame.height + 10))
+		scrollView.contentSize = CGSizeMake(exampleLabel.frame.width, 0)
+		scrollView.addSubview(exampleLabel)
+
+		addSubview(scrollView)
 	}
 
 	func stringToAttributedString(string: String) -> NSMutableAttributedString {
 		let words = totalSepratedWords(string)
 		let wordsIn_keywordPurple = filterKeywords(words)
 		let wordsIn_buildInBlue = filterBuildInWords(words)
-
-		print(wordsIn_keywordPurple)
-		print(wordsIn_buildInBlue)
 
 		let result = NSMutableAttributedString(string: string)
 
@@ -112,7 +127,7 @@ class DetailView: UIView {
 
 	func filterKeywords(words: [String]) -> [String] {
 		var keywords = [String]()
-		words.forEach({ if Keywords.contains($0) { keywords.append($0) } })
+		words.forEach({ if Keywords.contains($0 + " ") { keywords.append($0 + " ") } })
 		return keywords
 	}
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum G: String {
+enum E_G: String {
 	case guard_S, graphics
 
 	var detail: [String] {

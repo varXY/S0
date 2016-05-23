@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum N: String {
+enum E_N: String {
 	case navigation, navigationBar, NS, nil_S
 
 	var detail: [String] {

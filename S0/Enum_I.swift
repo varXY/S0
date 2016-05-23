@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum I: String {
+enum E_I: String {
 	case identifier, item, icon, instance, import_S
 
 	var detail: [String] {

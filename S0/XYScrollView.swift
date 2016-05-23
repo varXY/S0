@@ -24,62 +24,17 @@ import AVFoundation
 
 class XYScrollView: UIScrollView {
 
-	var X0_contentView: UIScrollView!
-	var X1_contentView: UIScrollView!
-	var X2_contentView: UIScrollView!
-
-	var Y0_storyView: DetailView!
-	var Y1_storyView: DetailView!
-	var Y2_storyView: DetailView!
-
-	var topView: UIScrollView!
-	var middleView: UIScrollView!
-	var bottomView: UIScrollView!
+	var contentViews = [UIScrollView]()
 
 	let topOrigin = CGPoint(x: 0, y: -ScreenHeight)
 	let middleOrigin = CGPoint(x: 0, y: 0)
 	let bottomOrigin = CGPoint(x: 0, y: ScreenHeight)
 
-	var initTopDetailIndex: (Int, Int)! {
-		didSet {
-			let topDetail = Catalog(rawValue: initTopDetailIndex.0)!.detail(initTopDetailIndex.1)
-
-			if initTopDetailIndex != (0, 0) {
-				let index = (initTopDetailIndex.0, initTopDetailIndex.1 - 1)
-				let storyView_0 = DetailView(detail: Catalog(rawValue: index.0)!.detail(index.1))
-				storyView_0.tag = 110
-				X0_contentView.addSubview(storyView_0)
-			} else {
-				let storyView_0 = DetailView(detail: topDetail)
-				storyView_0.tag = 110
-				X0_contentView.addSubview(storyView_0)
-			}
-
-			let storyView_1 = DetailView(detail: topDetail)
-			storyView_1.tag = 110
-			X1_contentView.addSubview(storyView_1)
-
-			if initTopDetailIndex != (25, 100) {
-				let index = (initTopDetailIndex.0, initTopDetailIndex.1 + 1)
-				let storyView_2 = DetailView(detail: Catalog(rawValue: index.0)!.detail(index.1))
-				storyView_2.tag = 110
-				X2_contentView.addSubview(storyView_2)
-			} else {
-				let storyView_2 = DetailView(detail: topDetail)
-				storyView_2.tag = 110
-				X2_contentView.addSubview(storyView_2)
-			}
-
-			topDetailIndex = initTopDetailIndex
-		}
-	}
-
 	var topDetailIndex = (0, 0)
 
 	var beginScroll = false
 
-	var inMainVC = false
-	var doneReorder = true
+	var doneScroll = true
 	var topViewIndex = 1
 
 	var scrolledType: XYScrollType = .NotScrollYet {
@@ -92,39 +47,31 @@ class XYScrollView: UIScrollView {
 
 	var animateTime: Double = 0.4
 
-	init() {
+	init(topDetailIndex: (Int, Int)) {
 		super.init(frame: ScreenBounds)
 		backgroundColor = UIColor.clearColor()
 		contentSize = CGSize(width: frame.width, height: 0)
 		alwaysBounceHorizontal = true
 		commonSetUp(self)
 
-		X0_contentView = UIScrollView(frame: bounds)
-		X0_contentView.frame.origin.y = -ScreenHeight
-		X0_contentView.contentSize = CGSize(width: 0, height: frame.height)
-		X0_contentView.alwaysBounceVertical = true
-		X0_contentView.alpha = 0.0
-		commonSetUp(X0_contentView)
+		let origins_Y = [-ScreenHeight, 0, ScreenHeight]
+		let details = [["", "", ""], Catalog(rawValue: topDetailIndex.0)!.detail(topDetailIndex.1), ["", "", ""]]
 
-		X1_contentView = UIScrollView(frame: bounds)
-		X1_contentView.contentSize = CGSize(width: 0, height: frame.height)
-		X1_contentView.alwaysBounceVertical = true
-		commonSetUp(X1_contentView)
+		contentViews = origins_Y.map({
+			let contentView = UIScrollView(frame: bounds)
+			contentView.frame.origin.y = $0
+			contentView.contentSize = CGSize(width: 0, height: frame.height)
+			commonSetUp(contentView)
+			contentView.alwaysBounceVertical = true
+//			contentView.alpha = 0.0
 
-		X2_contentView = UIScrollView(frame: bounds)
-		X2_contentView.frame.origin.y = ScreenHeight
-		X2_contentView.contentSize = CGSize(width: 0, height: frame.height)
-		X2_contentView.alwaysBounceVertical = true
-		X2_contentView.alpha = 0.0
-		commonSetUp(X2_contentView)
+			contentView.addSubview(DetailView(detail: details[origins_Y.indexOf($0)!]))
+			addSubview(contentView)
+			return contentView
+		})
 
-		topView = X0_contentView
-		middleView = X1_contentView
-		bottomView = X2_contentView
+		self.topDetailIndex = topDetailIndex
 
-		addSubview(X0_contentView)
-		addSubview(X1_contentView)
-		addSubview(X2_contentView)
 	}
 
 	func commonSetUp(scrollView: UIScrollView) {
@@ -137,50 +84,73 @@ class XYScrollView: UIScrollView {
 		scrollView.delegate = self
 	}
 
+	func previousIndex() -> (Int, Int) {
+		if topDetailIndex.1 == 0 {
+			return topDetailIndex.0 != 0 ? (topDetailIndex.0 - 1, Catalog(rawValue: topDetailIndex.0 - 1)!.words.count - 1) : (25, Catalog(rawValue: 25)!.words.count - 1)
+		} else {
+			return (topDetailIndex.0, topDetailIndex.1 - 1)
+		}
+	}
+
+	func nextIndex() -> (Int, Int) {
+		if topDetailIndex.1 == (Catalog(rawValue: topDetailIndex.0)!.words.count - 1) {
+			return topDetailIndex.0 != 25 ? (topDetailIndex.0 + 1, 0) : (0, 0)
+		} else {
+			return (topDetailIndex.0, topDetailIndex.1 + 1)
+		}
+	}
+
 
 	func moveContentViewToTop(scrollType: XYScrollType) {
 		switch scrolledType {
 		case .Up:
-			if doneReorder {
-				doneReorder = false
+			if doneScroll {
+				doneScroll = false
 
-				topView.frame.origin = middleOrigin
-				topView.transform = CGAffineTransformMakeScale(0.9, 0.9)
-				topView.alpha = 1.0
+				topDetailIndex = previousIndex()
+				changeDetailForContentView(contentViews[0], index: topDetailIndex)
+
+				contentViews[0].frame.origin = middleOrigin
+				contentViews[0].transform = CGAffineTransformMakeScale(0.9, 0.9)
+				contentViews[0].alpha = 1.0
 
 				animate({
-					self.topView.transform = CGAffineTransformIdentity
-					self.middleView.frame.origin = self.bottomOrigin
+					self.contentViews[0].transform = CGAffineTransformIdentity
+					self.contentViews[1].frame.origin = self.bottomOrigin
 					}, completion: {
-						self.sendSubviewToBack(self.middleView)
-						self.middleView.alpha = 0.0
-						self.middleView.frame.origin = self.topOrigin
+						self.sendSubviewToBack(self.contentViews[1])
+						self.contentViews[1].alpha = 0.0
+						self.contentViews[1].frame.origin = self.topOrigin
 
-						self.reorderView()
+						self.contentViews = [self.contentViews[1], self.contentViews[0], self.contentViews[2]]
+						self.doneScroll = true
 				})
 			}
 
 
 		case .Down:
-			if doneReorder {
-				doneReorder = false
+			if doneScroll {
+				doneScroll = false
 
-				bringSubviewToFront(bottomView)
-				bottomView.alpha = 1.0
+				topDetailIndex = nextIndex()
+				changeDetailForContentView(contentViews[2], index: topDetailIndex)
+
+				bringSubviewToFront(contentViews[2])
+				contentViews[2].alpha = 1.0
 
 				animate({
-					self.middleView.alpha = 0.4
-					self.middleView.transform = CGAffineTransformMakeScale(0.9, 0.9)
-					self.bottomView.frame.origin = self.middleOrigin
+					self.contentViews[1].alpha = 0.4
+					self.contentViews[1].transform = CGAffineTransformMakeScale(0.9, 0.9)
+					self.contentViews[2].frame.origin = self.middleOrigin
 					}, completion: {
-						self.middleView.transform = CGAffineTransformIdentity
-						self.middleView.alpha = 0.0
-						self.middleView.frame.origin = self.bottomOrigin
+						self.contentViews[1].transform = CGAffineTransformIdentity
+						self.contentViews[1].alpha = 0.0
+						self.contentViews[1].frame.origin = self.bottomOrigin
 
-						self.reorderView()
+						self.contentViews = [self.contentViews[0], self.contentViews[2], self.contentViews[1]]
+						self.doneScroll = true
 				})
 			}
-
 
 		default:
 			break
@@ -196,20 +166,14 @@ class XYScrollView: UIScrollView {
 		}
 	}
 
-	func changeStoryForContentView(contentView: UIScrollView, storyIndex: (Int, Int)) {
+	func changeDetailForContentView(contentView: UIScrollView, index: (Int, Int)) {
+		if let detailView = contentView.subviews[0] as? DetailView {
+//			detailView.backgroundColor = UIColor.redColor()
+			detailView.reloadDetail(Catalog(rawValue: index.0)!.detail(index.1))
+		}
 	}
 
 	func removePartOfStory(contentView: UIScrollView, labelIndex: Int) {
-	}
-
-	func reorderView() {
-		let contentViews = [X0_contentView, X1_contentView, X2_contentView]
-		for contentView in contentViews {
-			if contentView.frame.origin == topOrigin { topView = contentView }
-			if contentView.frame.origin == middleOrigin { middleView = contentView }
-			if contentView.frame.origin == bottomOrigin { bottomView = contentView }
-		}
-		doneReorder = true
 	}
 
 	required init?(coder aDecoder: NSCoder) {
