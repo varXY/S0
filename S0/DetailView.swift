@@ -17,18 +17,19 @@ class DetailView: UIView {
 	private let keywordAttributes = [NSForegroundColorAttributeName: UIColor.keywordPurple()]
 	private let buildInAttributes = [NSForegroundColorAttributeName: UIColor.buildInBlue()]
 	private let numberAttributes = [NSForegroundColorAttributeName: UIColor.numberPurple()]
+	private let stringAttributes = [NSForegroundColorAttributeName: UIColor.stringRed()]
+	private let whiteAttributes = [NSForegroundColorAttributeName: UIColor.plainWhite()]
+	private let commnetGreenAttribute = [NSForegroundColorAttributeName: UIColor.commentGreen()]
 
 	init(detail: [String]) {
 		super.init(frame: ScreenBounds)
 		backgroundColor = UIColor.backgroundBlack()
 		layer.cornerRadius = globalRadius
 		clipsToBounds = true
-
 		setupLabels(detail)
 	}
 
 	func reloadDetail(detail: [String]) {
-		print(detail)
 		subviews.forEach({ $0.removeFromSuperview() })
 		setupLabels(detail)
 	}
@@ -83,69 +84,143 @@ class DetailView: UIView {
 		addSubview(scrollView)
 	}
 
+	// MARK: Painting job
+
 	func stringToAttributedString(string: String) -> NSMutableAttributedString {
-		let words = totalSepratedWords(string)
-		let wordsIn_keywordPurple = filterKeywords(words)
-		let wordsIn_buildInBlue = filterBuildInWords(words)
+		let step_0 = paintKeywordPurple(NSMutableAttributedString(string: string))
+		let step_1 = paintBuildInBlue(step_0)
+		let step_2 = paintNumberPurple(step_1)
+		let step_3 = paintStringRed(step_2)
+		let step_4 = paintWhite(step_3)
+		let step_5 = paintCommentGreen(step_4)
+		return step_5
+	}
 
-		let result = NSMutableAttributedString(string: string)
+	func paintKeywordPurple(text: NSMutableAttributedString) -> NSMutableAttributedString {
+		var ranges = [NSRange]()
 
-		wordsIn_keywordPurple.forEach({
-			let range = result.mutableString.rangeOfString($0, options: .RegularExpressionSearch)
+		for keyword in Keywords {
+			ranges += text.mutableString.rangesOfString(keyword)
+		}
+
+		let result = text
+		for range in ranges {
 			result.addAttributes(keywordAttributes, range: range)
+		}
+
+		return result
+	}
+
+	func paintBuildInBlue(text: NSMutableAttributedString) -> NSMutableAttributedString {
+		var ranges = [NSRange]()
+
+		for valueType in ValueTypes {
+			ranges += text.mutableString.rangesOfString(valueType)
+		}
+
+		let result = text
+		for range in ranges {
+			result.addAttributes(buildInAttributes, range: range)
+		}
+
+		return result
+	}
+
+	func paintNumberPurple(text: NSMutableAttributedString) -> NSMutableAttributedString {
+		
+		var ranges = [NSRange]()
+
+		for number in Numbers {
+			ranges += text.mutableString.rangesOfString(String(number))
+		}
+
+		let result = text
+		for range in ranges {
+			result.addAttributes(numberAttributes, range: range)
+		}
+
+		return result
+	}
+
+	func paintStringRed(text: NSMutableAttributedString) -> NSMutableAttributedString {
+		let ranges = text.mutableString.rangesOfString("\"")
+
+		var stringRanges = [NSRange]()
+		for i in 0.stride(to: ranges.count, by: 2) {
+			if i != ranges.count - 1 && ranges.count != 1 {
+				stringRanges += [NSRange(ranges[i].location...ranges[i + 1].location)]
+			}
+		}
+
+		let result = text
+		for range in stringRanges {
+			result.addAttributes(stringAttributes, range: range)
+		}
+
+		return result
+	}
+
+	func paintWhite(text: NSMutableAttributedString) -> NSMutableAttributedString {
+		let sentences = text.mutableString.componentsSeparatedByString("\n\n")
+		var lines = [String]()
+		var words = [String]()
+		var whiteWords = [String]()
+
+		for sentence in sentences {
+			lines += sentence.componentsSeparatedByString("\n")
+		}
+
+		for line in lines {
+			words += line.componentsSeparatedByString(" ")
+		}
+
+		words.forEach({
+			let word = $0.removeMarks()
+			if !Keywords.contains(word) && Int(word) == nil && !word.containsString("\"") && !ValueTypes.contains(word) {
+				whiteWords.append($0.removeSelf())
+			}
 		})
 
-		wordsIn_buildInBlue.forEach({
-			var searchRange = NSMakeRange(0, result.mutableString.length)
-			var foundRange = NSRange()
-
-			repeat {
-				searchRange.length = result.mutableString.length - searchRange.location
-				foundRange = result.mutableString.rangeOfString($0, options: [], range: searchRange)
-				if foundRange.location != NSNotFound {
-					result.addAttributes(buildInAttributes, range: foundRange)
-					searchRange.location = foundRange.location + foundRange.length
-				} else {
-					break
-				}
-			} while searchRange.location < result.mutableString.length
+		let result = text
+		whiteWords.forEach({
+			let range = result.mutableString.rangeOfString($0.checkBrackets())
+			result.addAttributes(whiteAttributes, range: range)
 		})
 
 		return result
 	}
 
-	func totalSepratedWords(string: String) -> [String] {
-		let sentences = string.componentsSeparatedByString("\n\n")
-		var words_a = [String]()
-		sentences.forEach({
-			let a = $0.componentsSeparatedByString(" ")
-			words_a += a
-		})
+	func paintCommentGreen(text: NSMutableAttributedString) -> NSMutableAttributedString {
+		let sentences = text.mutableString.componentsSeparatedByString("\n\n")
+		var lines = [String]()
+		var words = [String]()
+		var greenWords = [String]()
 
-		return words_a
-	}
+		for sentence in sentences {
+			lines += sentence.componentsSeparatedByString("\n")
+		}
 
-	func filterKeywords(words: [String]) -> [String] {
-		var keywords = [String]()
-		words.forEach({ if Keywords.contains($0 + " ") { keywords.append($0 + " ") } })
-		return keywords
-	}
+		for line in lines {
+			words += line.componentsSeparatedByString(" ")
+		}
 
-	func filterBuildInWords(words: [String]) -> [String] {
-		var buildInWords = [String]()
-
-		words.forEach({
-			let dotWords = $0.componentsSeparatedByString(".")
-			if dotWords.count > 1 {
-				buildInWords += dotWords
-			} else {
-				let word = $0.removeMarks_1()
-				if word.isUppercaseWord() { buildInWords.append(word) }
+		for (index, word) in words.enumerate() {
+			if word == "//" {
+				var commnet = word + " " + words[index + 1]
+				if words[index + 1].containsString(".") && index <= words.count - 3 {
+					commnet += " " + words[index + 2]
+				}
+				greenWords.append(commnet)
 			}
+		}
+
+		let result = text
+		greenWords.forEach({
+			let range = result.mutableString.rangeOfString($0)
+			result.addAttributes(commnetGreenAttribute, range: range)
 		})
 
-		buildInWords = buildInWords.map({ return $0.removeMarks_1() })
-		return buildInWords
+		return result
 	}
 	
 	required init?(coder aDecoder: NSCoder) {

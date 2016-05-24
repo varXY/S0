@@ -8,7 +8,19 @@
 
 import Foundation
 
-let Keywords = ["var ", "let ", "func ", "import ", "class ", "struct ", "enum ", "static ", "public ", "private ", "lazy ", "where ", "false ", "true ", "nil ", "guard ", "case ", "return ", "try ", "try! ", "#function", "#selector", "override ", "typealias ", "extension "]
+let Numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+let Keywords = ["var", "let", "func", "import", "class", "struct", "enum", "static", "public", "private", "lazy", "where", "false", "true", "nil", "guard", "case", "return", "try", "#function", "#selector", "override", "typealias", "extension", "self", "throws"]
+
+let ValueTypes = ["Bool",
+                  "String", "NSString",
+                  "Int", "UInt",
+                  "Array", "Set",
+                  "Double", "Float",
+                  "NSRange",
+                  "NSObject", "AnyObject",
+                  "CGRect"
+]
 
 enum Catalog: Int {
 	case A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z
@@ -21,18 +33,24 @@ enum Catalog: Int {
 		switch self {
 		case .A:
 			return [
-				"application", "additional", "animate", "ambient", "active", "action", "attribute"
+				"application", "additional", "animate", "ambient", "active", "action", "attribute",
+				"as"
 			]
 		case .B:
 			return [
-				"bundle", "bool", "bounds", "background", "behavior"
+				"bundle", "bool", "bounds", "background", "behavior",
+				"break"
 			]
 		case .C:
 			return [
-				"component", "category", "cell", "completion", "context","controller", "CG"
+				"component", "category", "cell", "completion", "context","controller", "CG",
+				"class", "case", "continue"
 			]
 		case .D:
-			return ["delegate", "dispatch", "delay", "double", "draw"]
+			return [
+				"delegate", "dispatch", "delay", "double", "draw",
+				"deinit", "default",
+			]
 		case .E:
 			return ["enum", "extension"]
 		case .F:

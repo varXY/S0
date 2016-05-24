@@ -9,7 +9,7 @@
 import Foundation
 
 enum E_B: String {
-	case bundle, bool, bounds, background, behavior
+	case bundle, bool, bounds, background, behavior, break_S
 
 	var detail: [String] {
 		switch self {
@@ -37,6 +37,11 @@ enum E_B: String {
 			return [
 				"1. 举止；态度；行动\n2. 行为；性能；表现；(生物的)习性",
 			"var priceFormatter: NSNumberFormatter = {\n    let pf = NSNumberFormatter()\n    pf.formatterBehavior = .Behavior10_4\n    pf.numberStyle = .CurrencyStyle\n    return pf\n}()"
+			]
+		case .break_S:
+			return [
+			"1. 在循环语句中，终止并跳出循环\n2. 终止switch语句的情况（case）",
+			""
 			]
 		}
 	}

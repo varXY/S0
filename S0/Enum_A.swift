@@ -9,14 +9,14 @@
 import Foundation
 
 enum E_A: String {
-	case application, additional, animate, ambient, active, action, attribute
+	case application, additional, animate, ambient, active, action, attribute, as_S
 
 	var detail: [String] {
 		switch self {
 		case .application:
 			return [
 				"1. 应用程序\n2. 应用；运用；使用；用于\n3. 申请；请求",
-				"func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool\n\nlet notificationEnabled = UIApplication.sharedApplication().currentUserNotificationSettings()!.types != UIUserNotificationType.None"
+				"func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool\n\nlet notificationEnabled = UIApplication.sharedApplication().currentUserNotificationSettings()!.types != UIUserNotificationType.None\n\n// test\n// 2. test"
 			]
 		case .additional:
 			return [
@@ -47,6 +47,11 @@ enum E_A: String {
 			return [
 				"1. 定语；特征；品质\n2. 属性；象征",
 				"public let NSFontAttributeName: String\n\npublic let NSForegroundColorAttributeName: String\n\nnavigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]"
+			]
+		case .as_S:
+		return [
+		"1. 用于类型判断和转换\n2. as!用于强制转换，as?用于可为空转换",
+		"let word = \"这是个String类型\"\nlet length = (word as NSString).length\n// 把String类型转换成NSString类型，获取其长度。\n\nlet text = word as! String\n// 强制转换类型，如果无法转换，程序会出错。\n\nguard let string = word as? String else { return }\n// 对word进行可选转换，如果无法转换，则跳过。"
 			]
 		}
 	}
